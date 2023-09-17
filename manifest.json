@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Suggestion Blocker",
+  "version": "1.0",
+  "description": "Blocks YouTube's video suggestions",
+  
+  "permissions": ["storage", "scripting", "tabs","alarms"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "web_accessible_resources": [
+    {
+        "resources": ["styles.css"],
+        "matches": ["<all_urls>"]
+    }
+]
+}

@@ -1,0 +1,5 @@
+/* This hides the video suggestions on the right sidebar */
+#secondary {
+    display: none !important;
+  }
+  
